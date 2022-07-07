@@ -4,6 +4,7 @@ const chai = require('chai'),
 	spy = require('chai-spies');
 
 chai.use(spy);
+const should = chai.should();
 
 it('inferBreach func infers a value lower than the minimum as TOO_LOW', () => {
 	expect(alerts.inferBreach(20, 50, 100)).equals('TOO_LOW');
