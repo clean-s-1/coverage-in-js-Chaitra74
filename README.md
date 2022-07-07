@@ -27,7 +27,7 @@ implement several workflows:
   failing
 - Build and Run: Runs the tests. It's passing currently, but there are hardly
   any tests. You need to add more.
-- Enter Reflections: Replace the `_enter` in the **Reflections** section below,
+- Enter Reflections: Replace the in the **Reflections** section below,
   within this file. This workflow fails till you replace it with your
   impressions.
 
