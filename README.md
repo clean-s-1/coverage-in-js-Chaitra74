@@ -65,9 +65,7 @@ day-to-day work done in your team, and improving the quality of code.
 
 You have seen a few workflows in this repository. They are quality-gates to
 prevent duplication, control complexity and prove functionality. Do you think
-some of them have potential to guide code-improvements in your team? **\_enter
-yes/no**
+some of them have potential to guide code-improvements in your team? yes
 
 During the next four weeks, what improvement do you plan in your code-quality
-practice? (in your regular work, not in this repository!) **\_enter the practice
-here**
+practice? (in your regular work, not in this repository!) would start using TDD approach for development following the code checks similar to this assignment.
