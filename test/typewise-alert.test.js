@@ -57,33 +57,28 @@ it('classifyTemperatureBreach func for Invalid Cooling type', () => {
 it('sendToController basic functionality', () => {
 	var spy = chai.spy(alerts.sendToController);
 	spy('TOO_LOW');
-	expect(spy).to.have.been.called();
-	spy.should.have.been.called.with('TOO_LOW');
+	expect(spy).to.have.been.called.with('TOO_LOW');
 });
 
 it('sendToEmail basic functionality', () => {
 	var spy = chai.spy(alerts.sendToEmail);
-	spy('TOO_LOW');	
-	spy.should.have.been.called.with('TOO_LOW');
+	spy('TOO_LOW');
+	expect(spy).to.have.been.called.with('TOO_LOW');
 
 	spy('TOO_HIGH');
-	expect(spy).to.have.been.called();
-	spy.should.have.been.called.with('TOO_HIGH');
+	expect(spy).to.have.been.called.with('TOO_HIGH');
 
 	spy('NORMAL');
-	expect(spy).to.have.been.called();
-	spy.should.have.been.called.with('NORMAL');
+	expect(spy).to.have.been.called.with('NORMAL');
 });
 
 it('checkAndAlert basic functionality', () => {
 	var spy = chai.spy(alerts.checkAndAlert);
 	spy('TO_CONTROLLER', 'PASSIVE_COOLING', -5);
-	expect(spy).to.have.been.called();
-	spy.should.have.been.called.with('TO_CONTROLLER', 'PASSIVE_COOLING', -5);
+	expect(spy).to.have.been.called.with('TO_CONTROLLER', 'PASSIVE_COOLING', -5);
 
 	spy('TO_EMAIL', 'MED_ACTIVE_COOLING', 34);
-	expect(spy).to.have.been.called();
-	spy.should.have.been.called.with('TO_EMAIL', 'MED_ACTIVE_COOLING', 34);
+	expect(spy).to.have.been.called.with('TO_EMAIL', 'MED_ACTIVE_COOLING', 34);
 
 	expect(
 		alerts.checkAndAlert('INAVLID_ALERTTARGET', 'MED_ACTIVE_COOLING', 34)
