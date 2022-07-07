@@ -4,9 +4,7 @@ const chai = require('chai'),
 	spy = require('chai-spies');
 
 chai.use(spy);
-
 const should = chai.should();
-//expect = chai.expect;
 
 it('inferBreach func infers a value lower than the minimum as TOO_LOW', () => {
 	expect(alerts.inferBreach(20, 50, 100)).equals('TOO_LOW');
@@ -77,8 +75,7 @@ it('sendToController basic functionality', () => {
 
 it('sendToEmail basic functionality', () => {
 	var spy = chai.spy(alerts.sendToEmail);
-	spy('TOO_LOW');
-	//expect(spy).to.have.been.called();
+	spy('TOO_LOW');	
 	spy.should.have.been.called.with('TOO_LOW');
 
 	spy('TOO_HIGH');
