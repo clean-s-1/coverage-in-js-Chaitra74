@@ -4,7 +4,6 @@ const chai = require('chai'),
 	spy = require('chai-spies');
 
 chai.use(spy);
-const should = chai.should();
 
 it('inferBreach func infers a value lower than the minimum as TOO_LOW', () => {
 	expect(alerts.inferBreach(20, 50, 100)).equals('TOO_LOW');
@@ -28,42 +27,30 @@ it('coolingTypeRange func should give lowerlimit=0 and upperlimit=45 for HI_ACTI
 	expect(alerts.coolingTypeRange('HI_ACTIVE_COOLING').upperLimit).equals(45);
 });
 
-it('coolingTypeRange func should give lowerlimit=0 and upperlimit=40 for MED_ACTIVE_COOLING', () => {
+it('coolingTypeRange returns lowerlimit=0 and upperlimit=40 for MED_ACTIVE_COOLING', () => {
 	expect(alerts.coolingTypeRange('MED_ACTIVE_COOLING').lowerLimit).equals(0);
 	expect(alerts.coolingTypeRange('MED_ACTIVE_COOLING').upperLimit).equals(40);
 });
 
-it('coolingTypeRange func should give lowerlimit=Not in limits and upperlimit=Not in limits for Invalid cooling type', () => {
-	expect(alerts.coolingTypeRange('OUT_OF_RANGE').lowerLimit).equals(
-		'Not in limits'
-	);
-	expect(alerts.coolingTypeRange('OUT_OF_RANGE').upperLimit).equals(
-		'Not in limits'
-	);
+it('coolingTypeRange returns lowerlimit and upperlimit=Not in limits for Invalid input', () => {
+	expect(alerts.coolingTypeRange('OUT_OF_RANGE').lowerLimit).equals('Not in limits');
+	expect(alerts.coolingTypeRange('OUT_OF_RANGE').upperLimit).equals('Not in limits');
 });
 
 it('classifyTemperatureBreach func for TOO_LOW', () => {
-	expect(alerts.classifyTemperatureBreach('HI_ACTIVE_COOLING', -5)).equals(
-		'TOO_LOW'
-	);
+	expect(alerts.classifyTemperatureBreach('HI_ACTIVE_COOLING', -5)).equals('TOO_LOW');
 });
 
 it('classifyTemperatureBreach func for TOO_HIGH', () => {
-	expect(alerts.classifyTemperatureBreach('PASSIVE_COOLING', 40)).equals(
-		'TOO_HIGH'
-	);
+	expect(alerts.classifyTemperatureBreach('PASSIVE_COOLING', 40)).equals('TOO_HIGH');
 });
 
 it('classifyTemperatureBreach func for NORMAL', () => {
-	expect(alerts.classifyTemperatureBreach('MED_ACTIVE_COOLING', 35)).equals(
-		'NORMAL'
-	);
+	expect(alerts.classifyTemperatureBreach('MED_ACTIVE_COOLING', 35)).equals('NORMAL');
 });
 
 it('classifyTemperatureBreach func for Invalid Cooling type', () => {
-	expect(alerts.classifyTemperatureBreach('MEDI_ACTIVE_COOLING', 35)).equals(
-		'WARNING'
-	);
+	expect(alerts.classifyTemperatureBreach('MEDI_ACTIVE_COOLING', 35)).equals('WARNING');
 });
 
 it('sendToController basic functionality', () => {
