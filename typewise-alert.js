@@ -37,10 +37,7 @@ function classifyTemperatureBreach(coolingType, temperatureInC) {
 		coolingLimits.lowerLimit,
 		coolingLimits.upperLimit
 	);
-	if (
-		coolingLimits.lowerLimit === 'Not in limits' ||
-		coolingLimits.upperLimit === 'Not in limits'
-	) {
+	if ((coolingLimits.lowerLimit === 'Not in limits') || (coolingLimits.upperLimit === 'Not in limits')) {
 		return 'WARNING';
 	} else return breach;
 }
