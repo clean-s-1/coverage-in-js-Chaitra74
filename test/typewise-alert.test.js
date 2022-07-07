@@ -78,7 +78,7 @@ it('sendToController basic functionality', () => {
 it('sendToEmail basic functionality', () => {
 	var spy = chai.spy(alerts.sendToEmail);
 	spy('TOO_LOW');
-	expect(spy).to.have.been.called();
+	//expect(spy).to.have.been.called();
 	spy.should.have.been.called.with('TOO_LOW');
 
 	spy('TOO_HIGH');
